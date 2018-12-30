@@ -358,7 +358,8 @@ def animate(ar,skip=10,interval=100):
 
     skipped_array = ar[::skip,:,:]
     fig, ax = plt.subplots()
-    ims = plt.imshow(skipped_array[0],vmin=ar.min(),vmax=ar.max(), aspect='auto')
+    cmap = cm.get_cmap('jet')
+    ims = plt.imshow(skipped_array[0],vmin=ar.min(),vmax=ar.max(), aspect='auto', cmap=cmap)
     plt.colorbar()
     plt.title(str(0))
     def update(i):
