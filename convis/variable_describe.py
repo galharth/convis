@@ -410,7 +410,8 @@ def animate_double_plot(ar,skip=10,interval=200,window_length = 200):
     skipped_array = ar[::skip,:,:]
     fig, (ax1,ax2) = plt.subplots(1,2)
     plt.subplot(ax1)
-    ims = plt.imshow(skipped_array[0],vmin=ar.min(),vmax=ar.max())
+    cmap = cm.get_cmap('jet')
+    ims = plt.imshow(skipped_array[0],vmin=ar.min(),vmax=ar.max(), cmap=cmap)
     plt_x = np.linspace(0,window_length,window_length)
     plt_mean = ax2.plot(ar[:,:,:].mean((1,2)))
     plt_examples = ax2.plot(ar[:,int(ar.shape[1]/2),int(ar.shape[2]/2)],alpha=0.5,color='black')
