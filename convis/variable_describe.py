@@ -24,6 +24,7 @@ plotting_exceptions = []
 do_3d_plot = True
 try:
     import matplotlib
+    from matplotlib import cm
     import matplotlib.pylab as plt
     from IPython.core import pylabtools as pt
     gui, backend = pt.find_gui_and_backend('inline', 'inline')
